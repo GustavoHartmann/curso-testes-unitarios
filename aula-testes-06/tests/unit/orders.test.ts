@@ -19,7 +19,7 @@ describe("Order Service Tests", () => {
         status,
       };
     });
-    const result = await orderRepository.create(orderInput);
+    const result = await createOrder(orderInput);
     expect(result.protocol).toBe(protocol);
     expect(result.status).toBe(status);
   });
@@ -34,7 +34,7 @@ describe("Order Service Tests", () => {
         status,
       };
     });
-    const result = await orderRepository.getByProtocol(protocol);
+    const result = await getOrderByProtocol(protocol);
     expect(result.protocol).toBe(protocol);
     expect(result.status).toBe(status);
   });
@@ -49,7 +49,7 @@ describe("Order Service Tests", () => {
         status,
       };
     });
-    const result = await orderRepository.getByProtocol(protocol);
+    const result = await getOrderByProtocol(protocol);
     expect(result.protocol).toBe(protocol);
     expect(result.status).toBe(status);
   });
